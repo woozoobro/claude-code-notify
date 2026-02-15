@@ -20,10 +20,13 @@ Or from inside a Claude Code session:
 /plugin install https://github.com/woozoobro/claude-code-notify
 ```
 
+On first run, the plugin compiles a native Swift app and caches it at `~/.cache/claude-code-notify/`.
+
 ## Uninstall
 
 ```bash
 claude plugin uninstall claude-code-notify
+rm -rf ~/.cache/claude-code-notify
 ```
 
 **Requires**: `jq` (install via `brew install jq`)
