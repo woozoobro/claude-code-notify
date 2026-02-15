@@ -7,6 +7,7 @@ class NotificationDelegate: NSObject, NSUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: NSUserNotificationCenter,
                                 didActivate notification: NSUserNotification) {
+        center.removeDeliveredNotification(notification)
         if let bundleId = terminalBundleId,
            let app = NSRunningApplication.runningApplications(withBundleIdentifier: bundleId).first {
             app.activate()
