@@ -12,9 +12,11 @@ Change the notification sound theme for claude-code-notify.
 
 1. Read `~/.config/claude-code-notify/config.json` if it exists. Note the current theme so you can indicate it to the user.
 
-2. Use AskUserQuestion to present the available themes. Mark the current theme with "(Current)" in its label:
+2. Use AskUserQuestion to present the available themes. Mark the current theme with "(Current)" in its label.
 
-   **Game themes** (custom sound files):
+   Since AskUserQuestion supports max 4 options per question, split into two questions. **The first question MUST show game themes**, the second shows system themes:
+
+   **First question — Game themes** (custom sound files):
 
    | Theme | Vibe |
    |-------|------|
@@ -24,7 +26,7 @@ Change the notification sound theme for claude-code-notify.
 
    Game themes play custom audio files from `resources/<theme>/`. Users can replace them with their own files — just use filenames `stop`, `permission`, `idle`, `tool_failed` with any audio extension (`.mp3`, `.wav`, `.aiff`, `.m4a`, etc.).
 
-   **System sound themes** (macOS built-in sounds):
+   **Second question — System sound themes** (macOS built-in sounds):
 
    | Theme | Stop | Permission | Idle | Tool Failed | Vibe |
    |-------|------|-----------|------|-------------|------|
@@ -32,7 +34,7 @@ Change the notification sound theme for claude-code-notify.
    | **retro** | Purr | Morse | Pop | Sosumi | Playful 8-bit nostalgia |
    | **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
 
-   Also include a **Custom** option that lets the user pick each sound individually from macOS system sounds.
+   Also include a **Custom** option in the second question that lets the user pick each sound individually from macOS system sounds.
 
 3. If the user selects **Custom**, use AskUserQuestion 4 times — once for each event (stop, permission, idle, tool_failed) — letting them choose from available macOS system sounds:
 
