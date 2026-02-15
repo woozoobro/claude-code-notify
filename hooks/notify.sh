@@ -53,18 +53,21 @@ esac
 
 THEME_CONFIG="$HOME/.config/claude-code-notify/config.json"
 
-if [ -f "$THEME_CONFIG" ]; then
-    THEME=$(jq -r '.theme // "default"' "$THEME_CONFIG" 2>/dev/null || echo "default")
+if [ ! -f "$THEME_CONFIG" ]; then
+    mkdir -p "$(dirname "$THEME_CONFIG")"
+    echo '{ "theme": "default" }' > "$THEME_CONFIG"
+fi
 
-    if [ "$THEME" = "custom" ]; then
-        CUSTOM_SOUND=$(jq -r ".sounds.${EVENT} // empty" "$THEME_CONFIG" 2>/dev/null || true)
-        [ -n "$CUSTOM_SOUND" ] && SOUND="$CUSTOM_SOUND"
-    elif [ "$THEME" != "default" ]; then
-        THEME_FILE="$PLUGIN_ROOT/themes.json"
-        if [ -f "$THEME_FILE" ]; then
-            THEME_SOUND=$(jq -r ".[\"${THEME}\"].sounds.${EVENT} // empty" "$THEME_FILE" 2>/dev/null || true)
-            [ -n "$THEME_SOUND" ] && SOUND="$THEME_SOUND"
-        fi
+THEME=$(jq -r '.theme // "default"' "$THEME_CONFIG" 2>/dev/null || echo "default")
+
+if [ "$THEME" = "custom" ]; then
+    CUSTOM_SOUND=$(jq -r ".sounds.${EVENT} // empty" "$THEME_CONFIG" 2>/dev/null || true)
+    [ -n "$CUSTOM_SOUND" ] && SOUND="$CUSTOM_SOUND"
+elif [ "$THEME" != "default" ]; then
+    THEME_FILE="$PLUGIN_ROOT/themes.json"
+    if [ -f "$THEME_FILE" ]; then
+        THEME_SOUND=$(jq -r ".[\"${THEME}\"].sounds.${EVENT} // empty" "$THEME_FILE" 2>/dev/null || true)
+        [ -n "$THEME_SOUND" ] && SOUND="$THEME_SOUND"
     fi
 fi
 

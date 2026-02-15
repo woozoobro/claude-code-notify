@@ -1,6 +1,7 @@
 ---
 name: notify-theme
 description: Change the notification sound theme for claude-code-notify
+allowed-tools: Read, Write, Bash
 ---
 
 # Notify Theme
