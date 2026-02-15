@@ -11,13 +11,19 @@ Pick whichever method you prefer:
 From your terminal:
 
 ```bash
-claude plugin add https://github.com/woozoobro/claude-code-notify
+claude plugin install https://github.com/woozoobro/claude-code-notify
 ```
 
 Or from inside a Claude Code session:
 
 ```
 /plugin install https://github.com/woozoobro/claude-code-notify
+```
+
+## Uninstall
+
+```bash
+claude plugin uninstall claude-code-notify
 ```
 
 **Requires**: `jq` (install via `brew install jq`)
