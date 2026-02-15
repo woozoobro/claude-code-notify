@@ -15,7 +15,14 @@ class NotificationDelegate: NSObject, NSUserNotificationCenterDelegate {
                 app.activate(options: .activateIgnoringOtherApps)
             }
             // AppleScript fallback — also deminiaturizes minimized windows
-            let src = "tell application id \"\(bundleId)\" to activate"
+            let src = """
+            tell application id "\(bundleId)"
+                activate
+                try
+                    set miniaturized of every window to false
+                end try
+            end tell
+            """
             NSAppleScript(source: src)?.executeAndReturnError(nil)
         }
         CFRunLoopStop(CFRunLoopGetMain())
