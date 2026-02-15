@@ -60,14 +60,28 @@ fi
 
 THEME=$(jq -r '.theme // "default"' "$THEME_CONFIG" 2>/dev/null || echo "default")
 
+SOUND_FILE=""
+
 if [ "$THEME" = "custom" ]; then
     CUSTOM_SOUND=$(jq -r ".sounds.${EVENT} // empty" "$THEME_CONFIG" 2>/dev/null || true)
     [ -n "$CUSTOM_SOUND" ] && SOUND="$CUSTOM_SOUND"
 elif [ "$THEME" != "default" ]; then
     THEME_FILE="$PLUGIN_ROOT/themes.json"
     if [ -f "$THEME_FILE" ]; then
+        THEME_TYPE=$(jq -r ".[\"${THEME}\"].type // \"system\"" "$THEME_FILE" 2>/dev/null || echo "system")
         THEME_SOUND=$(jq -r ".[\"${THEME}\"].sounds.${EVENT} // empty" "$THEME_FILE" 2>/dev/null || true)
-        [ -n "$THEME_SOUND" ] && SOUND="$THEME_SOUND"
+
+        if [ "$THEME_TYPE" = "custom" ]; then
+            # Find sound file with any extension (wav, mp3, aiff, aac, m4a, etc.)
+            SOUND_FILE=$(ls "$PLUGIN_ROOT/resources/$THEME/${EVENT}".* 2>/dev/null | head -1)
+            if [ -n "$SOUND_FILE" ] && [ -f "$SOUND_FILE" ]; then
+                SOUND=""   # notification will be silent; afplay handles audio
+            else
+                SOUND_FILE=""  # fall back to system sound
+            fi
+        elif [ -n "$THEME_SOUND" ]; then
+            SOUND="$THEME_SOUND"
+        fi
     fi
 fi
 
@@ -194,6 +208,12 @@ if [ -z "$CALLER_BUNDLE_ID" ]; then
         Alacritty)       CALLER_BUNDLE_ID="org.alacritty" ;;
         kitty)           CALLER_BUNDLE_ID="net.kovidgoyal.kitty" ;;
     esac
+fi
+
+# ── Play custom sound file (if any) ──────────────────────────────────
+
+if [ -n "$SOUND_FILE" ] && [ -f "$SOUND_FILE" ]; then
+    afplay "$SOUND_FILE" &
 fi
 
 # ── Send notification ─────────────────────────────────────────────────

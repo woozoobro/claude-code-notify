@@ -48,5 +48,20 @@
       "idle": "Submarine",
       "tool_failed": "Tink"
     }
+  },
+  "lol": {
+    "name": "League of Legends",
+    "type": "custom",
+    "description": "Summoner's Rift vibes"
+  },
+  "hearthstone": {
+    "name": "Hearthstone",
+    "type": "custom",
+    "description": "Tavern warmth and card magic"
+  },
+  "starcraft": {
+    "name": "StarCraft",
+    "type": "custom",
+    "description": "Terran command center alerts"
   }
 }

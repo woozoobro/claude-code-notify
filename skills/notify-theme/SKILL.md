@@ -14,6 +14,8 @@ Change the notification sound theme for claude-code-notify.
 
 2. Use AskUserQuestion to present the available themes. Mark the current theme with "(Current)" in its label:
 
+   **System sound themes** (macOS built-in sounds):
+
    | Theme | Stop | Permission | Idle | Tool Failed | Vibe |
    |-------|------|-----------|------|-------------|------|
    | **default** | Hero | Submarine | Glass | Basso | Clean, professional |
@@ -22,7 +24,17 @@ Change the notification sound theme for claude-code-notify.
    | **arcade** | Bottle | Frog | Morse | Basso | Fun, attention-grabbing |
    | **zen** | Glass | Blow | Submarine | Tink | Calm, peaceful |
 
-   Also include a **Custom** option that lets the user pick each sound individually.
+   **Game themes** (custom sound files):
+
+   | Theme | Vibe |
+   |-------|------|
+   | **lol** | Summoner's Rift vibes |
+   | **hearthstone** | Tavern warmth and card magic |
+   | **starcraft** | Terran command center alerts |
+
+   Game themes play custom audio files from `resources/<theme>/`. Users can replace them with their own files — just use filenames `stop`, `permission`, `idle`, `tool_failed` with any audio extension (`.mp3`, `.wav`, `.aiff`, `.m4a`, etc.).
+
+   Also include a **Custom** option that lets the user pick each sound individually from macOS system sounds.
 
 3. If the user selects **Custom**, use AskUserQuestion 4 times — once for each event (stop, permission, idle, tool_failed) — letting them choose from available macOS system sounds:
 
@@ -34,7 +46,7 @@ Change the notification sound theme for claude-code-notify.
    mkdir -p ~/.config/claude-code-notify
    ```
 
-   For a preset theme:
+   For a preset theme (both system and game themes):
    ```json
    { "theme": "retro" }
    ```
