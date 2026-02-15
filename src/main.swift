@@ -8,9 +8,15 @@ class NotificationDelegate: NSObject, NSUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: NSUserNotificationCenter,
                                 didActivate notification: NSUserNotification) {
         center.removeDeliveredNotification(notification)
-        if let bundleId = terminalBundleId,
-           let app = NSRunningApplication.runningApplications(withBundleIdentifier: bundleId).first {
-            app.activate()
+        if let bundleId = terminalBundleId {
+            // unhide (Cmd+H) + force activate
+            if let app = NSRunningApplication.runningApplications(withBundleIdentifier: bundleId).first {
+                app.unhide()
+                app.activate(options: .activateIgnoringOtherApps)
+            }
+            // AppleScript fallback — also deminiaturizes minimized windows
+            let src = "tell application id \"\(bundleId)\" to activate"
+            NSAppleScript(source: src)?.executeAndReturnError(nil)
         }
         CFRunLoopStop(CFRunLoopGetMain())
     }
