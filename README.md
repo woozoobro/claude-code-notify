@@ -19,6 +19,15 @@ claude plugin install claude-code-notify@woozoobro-claude-code-notify
 On first run, the plugin compiles a native Swift app and caches it at `~/.cache/claude-code-notify/`.
 macOS will ask for notification permission — make sure to allow it.
 
+## Update
+
+If the plugin doesn't update properly, clear the cache and reinstall:
+
+```bash
+rm -rf ~/.claude/plugins/cache/woozoobro-claude-code-notify/
+claude plugin install claude-code-notify@woozoobro-claude-code-notify
+```
+
 ## Uninstall
 
 ```bash
