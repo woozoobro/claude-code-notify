@@ -7,10 +7,8 @@ Native macOS notifications for Claude Code with Claude icon.
 ## Install
 
 ```bash
-claude plugin add /path/to/claude-code-notify
+claude plugin add https://github.com/woozoobro/claude-code-notify
 ```
-
-Or clone into your plugins directory.
 
 **Requires**: `jq` (install via `brew install jq`)
 
