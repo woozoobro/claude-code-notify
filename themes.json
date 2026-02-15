@@ -29,26 +29,6 @@
       "tool_failed": "Funk"
     }
   },
-  "arcade": {
-    "name": "Arcade",
-    "description": "Fun, attention-grabbing game sounds",
-    "sounds": {
-      "stop": "Bottle",
-      "permission": "Frog",
-      "idle": "Morse",
-      "tool_failed": "Basso"
-    }
-  },
-  "zen": {
-    "name": "Zen",
-    "description": "Calm and peaceful",
-    "sounds": {
-      "stop": "Glass",
-      "permission": "Blow",
-      "idle": "Submarine",
-      "tool_failed": "Tink"
-    }
-  },
   "lol": {
     "name": "League of Legends",
     "type": "custom",

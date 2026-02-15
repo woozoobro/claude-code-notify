@@ -46,17 +46,6 @@ Clicking a notification brings focus back to your terminal/editor.
 
 Change notification sounds with the `/notify-theme` slash command inside Claude Code:
 
-**System themes** (macOS built-in sounds):
-
-| Theme | Stop | Permission | Idle | Tool Failed | Vibe |
-|-------|------|-----------|------|-------------|------|
-| **default** | Hero | Submarine | Glass | Basso | Clean, professional |
-| **retro** | Purr | Morse | Pop | Sosumi | 8-bit nostalgia |
-| **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
-| **arcade** | Bottle | Frog | Morse | Basso | Fun, attention-grabbing |
-| **zen** | Glass | Blow | Submarine | Tink | Calm, peaceful |
-| **custom** | — | — | — | — | Pick each sound yourself |
-
 **Game themes** (custom sound files):
 
 | Theme | Vibe |
@@ -66,6 +55,15 @@ Change notification sounds with the `/notify-theme` slash command inside Claude 
 | **starcraft** | Terran command center alerts |
 
 Game themes use custom audio files stored in `resources/<theme>/`. You can replace them with your own sound files — just drop files named `stop`, `permission`, `idle`, and `tool_failed` with any audio extension (`.mp3`, `.wav`, `.aiff`, `.m4a`, etc.) into the theme folder.
+
+**System themes** (macOS built-in sounds):
+
+| Theme | Stop | Permission | Idle | Tool Failed | Vibe |
+|-------|------|-----------|------|-------------|------|
+| **default** | Hero | Submarine | Glass | Basso | Clean, professional |
+| **retro** | Purr | Morse | Pop | Sosumi | 8-bit nostalgia |
+| **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
+| **custom** | — | — | — | — | Pick each sound yourself |
 
 Theme config is stored at `~/.config/claude-code-notify/config.json`.
 

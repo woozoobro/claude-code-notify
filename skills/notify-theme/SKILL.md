@@ -14,16 +14,6 @@ Change the notification sound theme for claude-code-notify.
 
 2. Use AskUserQuestion to present the available themes. Mark the current theme with "(Current)" in its label:
 
-   **System sound themes** (macOS built-in sounds):
-
-   | Theme | Stop | Permission | Idle | Tool Failed | Vibe |
-   |-------|------|-----------|------|-------------|------|
-   | **default** | Hero | Submarine | Glass | Basso | Clean, professional |
-   | **retro** | Purr | Morse | Pop | Sosumi | Playful 8-bit nostalgia |
-   | **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
-   | **arcade** | Bottle | Frog | Morse | Basso | Fun, attention-grabbing |
-   | **zen** | Glass | Blow | Submarine | Tink | Calm, peaceful |
-
    **Game themes** (custom sound files):
 
    | Theme | Vibe |
@@ -33,6 +23,14 @@ Change the notification sound theme for claude-code-notify.
    | **starcraft** | Terran command center alerts |
 
    Game themes play custom audio files from `resources/<theme>/`. Users can replace them with their own files — just use filenames `stop`, `permission`, `idle`, `tool_failed` with any audio extension (`.mp3`, `.wav`, `.aiff`, `.m4a`, etc.).
+
+   **System sound themes** (macOS built-in sounds):
+
+   | Theme | Stop | Permission | Idle | Tool Failed | Vibe |
+   |-------|------|-----------|------|-------------|------|
+   | **default** | Hero | Submarine | Glass | Basso | Clean, professional |
+   | **retro** | Purr | Morse | Pop | Sosumi | Playful 8-bit nostalgia |
+   | **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
 
    Also include a **Custom** option that lets the user pick each sound individually from macOS system sounds.
 
