@@ -1,0 +1,12 @@
+{
+  "name": "woozoobro-claude-code-notify",
+  "owner": {
+    "name": "woozoobro"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-notify",
+      "source": "./"
+    }
+  ]
+}
