@@ -1,3 +1,8 @@
+---
+name: notify-theme
+description: Change the notification sound theme for claude-code-notify
+---
+
 # Notify Theme
 
 Change the notification sound theme for claude-code-notify.
