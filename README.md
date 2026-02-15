@@ -1,0 +1,35 @@
+# claude-code-notify
+
+Native macOS notifications for Claude Code with Claude icon.
+
+![macOS](https://img.shields.io/badge/macOS-only-black)
+
+## Install
+
+```bash
+claude plugin add /path/to/claude-code-notify
+```
+
+Or clone into your plugins directory.
+
+**Requires**: `jq` (install via `brew install jq`)
+
+## What it does
+
+Sends a desktop notification when Claude Code:
+
+| Event | Sound | When |
+|-------|-------|------|
+| **Stop** | Hero | Claude finishes a task |
+| **Permission** | Submarine | Waiting for your approval |
+| **Idle** | Glass | Assistant goes idle |
+| **Tool Failed** | Basso | A tool call fails |
+
+Clicking a notification brings focus back to your terminal/editor.
+
+## How it works
+
+1. Claude Code hook fires → `notify.sh` runs
+2. Script auto-compiles a Swift `.app` bundle on first run (cached in `~/.cache/claude-code-notify/`)
+3. Notification is delivered via native macOS API with Claude icon
+4. Click notification → focus returns to caller app (VSCode, Cursor, iTerm, Terminal, ghostty, Warp, Alacritty, kitty, Windsurf)
