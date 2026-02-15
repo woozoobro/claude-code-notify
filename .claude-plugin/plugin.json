@@ -1,6 +1,7 @@
 {
   "name": "claude-code-notify",
   "description": "Native macOS desktop notifications for Claude Code with Claude icon",
-  "version": "0.1.0",
-  "author": { "name": "woozoobro" }
+  "version": "0.2.0",
+  "author": { "name": "woozoobro" },
+  "skills": ["skills/notify-theme.md"]
 }

@@ -24,6 +24,7 @@ macOS will ask for notification permission — make sure to allow it.
 ```bash
 claude plugin uninstall claude-code-notify
 rm -rf ~/.cache/claude-code-notify
+rm -rf ~/.config/claude-code-notify
 ```
 
 **Requires**: `jq` (install via `brew install jq`)
@@ -40,6 +41,21 @@ Sends a desktop notification when Claude Code:
 | **Tool Failed** | Basso | A tool call fails |
 
 Clicking a notification brings focus back to your terminal/editor.
+
+## Sound Themes
+
+Change notification sounds with the `/notify-theme` slash command inside Claude Code:
+
+| Theme | Stop | Permission | Idle | Tool Failed | Vibe |
+|-------|------|-----------|------|-------------|------|
+| **default** | Hero | Submarine | Glass | Basso | Clean, professional |
+| **retro** | Purr | Morse | Pop | Sosumi | 8-bit nostalgia |
+| **minimal** | Tink | Blow | Pop | Funk | Subtle, understated |
+| **arcade** | Bottle | Frog | Morse | Basso | Fun, attention-grabbing |
+| **zen** | Glass | Blow | Submarine | Tink | Calm, peaceful |
+| **custom** | — | — | — | — | Pick each sound yourself |
+
+Theme config is stored at `~/.config/claude-code-notify/config.json`.
 
 ## How it works
 

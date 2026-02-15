@@ -1,0 +1,52 @@
+{
+  "default": {
+    "name": "Default",
+    "description": "Clean, professional macOS sounds",
+    "sounds": {
+      "stop": "Hero",
+      "permission": "Submarine",
+      "idle": "Glass",
+      "tool_failed": "Basso"
+    }
+  },
+  "retro": {
+    "name": "Retro Game",
+    "description": "Playful 8-bit nostalgia vibes",
+    "sounds": {
+      "stop": "Purr",
+      "permission": "Morse",
+      "idle": "Pop",
+      "tool_failed": "Sosumi"
+    }
+  },
+  "minimal": {
+    "name": "Minimal",
+    "description": "Subtle and understated",
+    "sounds": {
+      "stop": "Tink",
+      "permission": "Blow",
+      "idle": "Pop",
+      "tool_failed": "Funk"
+    }
+  },
+  "arcade": {
+    "name": "Arcade",
+    "description": "Fun, attention-grabbing game sounds",
+    "sounds": {
+      "stop": "Bottle",
+      "permission": "Frog",
+      "idle": "Morse",
+      "tool_failed": "Basso"
+    }
+  },
+  "zen": {
+    "name": "Zen",
+    "description": "Calm and peaceful",
+    "sounds": {
+      "stop": "Glass",
+      "permission": "Blow",
+      "idle": "Submarine",
+      "tool_failed": "Tink"
+    }
+  }
+}
