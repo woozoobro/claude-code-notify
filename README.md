@@ -2,6 +2,8 @@
 
 Native macOS notifications for Claude Code with Claude icon.
 
+> 🇰🇷 [한국어](./README.ko.md)
+
 ![macOS](https://img.shields.io/badge/macOS-only-black)
 
 ## Install
