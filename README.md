@@ -57,6 +57,14 @@ Clicking a notification brings focus back to your terminal/editor.
 
 Change notification sounds with the `/notify-theme` slash command inside Claude Code:
 
+**Silent mode:**
+
+Use the `silent` theme to disable all notification sounds while keeping visual alerts:
+
+| Theme | Vibe |
+|-------|------|
+| **silent** | Visual-only, no sound |
+
 **Game themes** (custom sound files):
 
 | Theme | Vibe |

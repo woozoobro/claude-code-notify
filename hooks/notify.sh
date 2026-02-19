@@ -71,7 +71,10 @@ elif [ "$THEME" != "default" ]; then
         THEME_TYPE=$(jq -r ".[\"${THEME}\"].type // \"system\"" "$THEME_FILE" 2>/dev/null || echo "system")
         THEME_SOUND=$(jq -r ".[\"${THEME}\"].sounds.${EVENT} // empty" "$THEME_FILE" 2>/dev/null || true)
 
-        if [ "$THEME_TYPE" = "custom" ]; then
+        if [ "$THEME_TYPE" = "silent" ]; then
+            SOUND=""
+            SOUND_FILE=""
+        elif [ "$THEME_TYPE" = "custom" ]; then
             # Find sound file with any extension (wav, mp3, aiff, aac, m4a, etc.)
             SOUND_FILE=$(ls "$PLUGIN_ROOT/resources/$THEME/${EVENT}".* 2>/dev/null | head -1)
             if [ -n "$SOUND_FILE" ] && [ -f "$SOUND_FILE" ]; then

@@ -16,15 +16,18 @@ Change the notification sound theme for claude-code-notify.
 
    Since AskUserQuestion supports max 4 options per question, split into two questions. **The first question MUST show game themes**, the second shows system themes:
 
-   **First question — Game themes** (custom sound files):
+   **First question — Game themes & Silent** (custom sound files + silent mode):
 
    | Theme | Vibe |
    |-------|------|
+   | **silent** | Visual-only, no sound |
    | **lol** | Summoner's Rift vibes |
    | **hearthstone** | Tavern warmth and card magic |
    | **starcraft** | Terran command center alerts |
 
    Game themes play custom audio files from `resources/<theme>/`. Users can replace them with their own files — just use filenames `stop`, `permission`, `idle`, `tool_failed` with any audio extension (`.mp3`, `.wav`, `.aiff`, `.m4a`, etc.).
+
+   The **silent** theme disables all notification sounds while keeping visual alerts.
 
    **Second question — System sound themes** (macOS built-in sounds):
 

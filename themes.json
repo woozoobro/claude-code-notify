@@ -1,4 +1,9 @@
 {
+  "silent": {
+    "name": "Silent",
+    "type": "silent",
+    "description": "Visual-only notifications, no sound"
+  },
   "default": {
     "name": "Default",
     "description": "Clean, professional macOS sounds",
