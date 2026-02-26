@@ -12,6 +12,8 @@ Native macOS notifications for Claude Code with Claude icon.
 claude plugin marketplace add woozoobro/claude-code-notify && claude plugin install claude-code-notify@woozoobro-claude-code-notify
 ```
 
+> If the plugin is already installed, this command will fail at the marketplace step and skip the install. See the Update section below to reinstall.
+
 On first run, the plugin compiles a native Swift app and caches it at `~/.cache/claude-code-notify/`.
 macOS will ask for notification permission — make sure to allow it.
 

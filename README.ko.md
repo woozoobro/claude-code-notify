@@ -14,6 +14,8 @@ Claude Code를 위한 네이티브 macOS 알림. Claude 아이콘과 함께 데�
 claude plugin marketplace add woozoobro/claude-code-notify && claude plugin install claude-code-notify@woozoobro-claude-code-notify
 ```
 
+> 이미 설치된 상태에서 다시 실행하면 marketplace add가 실패하며 install도 실행되지 않습니다. 재설치가 필요하면 아래 업데이트 섹션을 참고하세요.
+
 첫 실행 시 네이티브 Swift 앱을 컴파일하고 `~/.cache/claude-code-notify/`에 캐시합니다.
 macOS에서 알림 권한을 요청하면 반드시 허용해 주세요.
 
