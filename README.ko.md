@@ -8,14 +8,10 @@ Claude Code를 위한 네이티브 macOS 알림. Claude 아이콘과 함께 데�
 
 ## 설치
 
-아래 두 명령어를 터미널에서 순서대로 실행하세요:
+아래 명령어를 터미널에서 실행하세요:
 
 ```bash
-# 1단계: 마켓플레이스 등록
-claude plugin marketplace add woozoobro/claude-code-notify
-
-# 2단계: 플러그인 설치
-claude plugin install claude-code-notify@woozoobro-claude-code-notify
+claude plugin marketplace add woozoobro/claude-code-notify && claude plugin install claude-code-notify@woozoobro-claude-code-notify
 ```
 
 첫 실행 시 네이티브 Swift 앱을 컴파일하고 `~/.cache/claude-code-notify/`에 캐시합니다.

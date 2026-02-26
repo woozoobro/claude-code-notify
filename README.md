@@ -8,14 +8,8 @@ Native macOS notifications for Claude Code with Claude icon.
 
 ## Install
 
-Run the following two commands in order:
-
 ```bash
-# Step 1: Register the marketplace
-claude plugin marketplace add woozoobro/claude-code-notify
-
-# Step 2: Install the plugin
-claude plugin install claude-code-notify@woozoobro-claude-code-notify
+claude plugin marketplace add woozoobro/claude-code-notify && claude plugin install claude-code-notify@woozoobro-claude-code-notify
 ```
 
 On first run, the plugin compiles a native Swift app and caches it at `~/.cache/claude-code-notify/`.
