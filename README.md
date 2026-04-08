@@ -28,11 +28,20 @@ claude plugin install claude-code-notify@woozoobro-claude-code-notify
 
 ## Uninstall
 
-```bash
-claude plugin uninstall claude-code-notify
-rm -rf ~/.cache/claude-code-notify
-rm -rf ~/.config/claude-code-notify
-```
+1. Uninstall the plugin:
+   ```bash
+   claude plugin uninstall claude-code-notify
+   ```
+
+2. Remove the marketplace entry — run `/plugin` inside Claude Code and remove the `woozoobro-claude-code-notify` marketplace. Or manually delete its entry from `~/.claude/settings.json` under `extraKnownMarketplaces`.
+
+3. Remove files created outside the plugin directory:
+   ```bash
+   rm -rf ~/.cache/claude-code-notify    # compiled Swift app bundle
+   rm -rf ~/.config/claude-code-notify   # theme config (config.json)
+   ```
+
+> **Note**: Hooks are defined inside the plugin directory, so they are removed automatically with the plugin. No additional hook cleanup is needed.
 
 **Requires**: `jq` (install via `brew install jq`)
 

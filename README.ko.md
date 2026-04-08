@@ -30,11 +30,20 @@ claude plugin install claude-code-notify@woozoobro-claude-code-notify
 
 ## 삭제
 
-```bash
-claude plugin uninstall claude-code-notify
-rm -rf ~/.cache/claude-code-notify
-rm -rf ~/.config/claude-code-notify
-```
+1. 플러그인 삭제:
+   ```bash
+   claude plugin uninstall claude-code-notify
+   ```
+
+2. 마켓플레이스 엔트리 제거 — Claude Code에서 `/plugin`을 실행하고 `woozoobro-claude-code-notify` 마켓플레이스를 제거하세요. 또는 `~/.claude/settings.json`의 `extraKnownMarketplaces`에서 해당 항목을 직접 삭제해도 됩니다.
+
+3. 플러그인 디렉토리 외부에 생성된 파일 삭제:
+   ```bash
+   rm -rf ~/.cache/claude-code-notify    # 컴파일된 Swift 앱 번들
+   rm -rf ~/.config/claude-code-notify   # 테마 설정 (config.json)
+   ```
+
+> **참고**: 훅은 플러그인 디렉토리 내부에 정의되어 있으므로 플러그인 삭제 시 자동으로 제거됩니다. 별도의 훅 정리는 필요 없습니다.
 
 **필수 의존성**: `jq` (`brew install jq`로 설치)
 
