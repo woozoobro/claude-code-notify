@@ -35,8 +35,9 @@ claude plugin install claude-code-notify@woozoobro-claude-code-notify
 
 2. Remove the marketplace entry — run `/plugin` inside Claude Code and remove the `woozoobro-claude-code-notify` marketplace. Or manually delete its entry from `~/.claude/settings.json` under `extraKnownMarketplaces`.
 
-3. Remove files created outside the plugin directory:
+3. Remove cached and generated files:
    ```bash
+   rm -rf ~/.claude/plugins/cache/woozoobro-claude-code-notify/  # plugin cache
    rm -rf ~/.cache/claude-code-notify    # compiled Swift app bundle
    rm -rf ~/.config/claude-code-notify   # theme config (config.json)
    ```
